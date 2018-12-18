@@ -4,7 +4,7 @@
   "description": "Create tin whistle tabs!",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest --watch --verbose false"
   },
   "keywords": [
     "tin",
@@ -12,5 +12,22 @@
     "tabs"
   ],
   "author": "Tobias Skarhed",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-jest": "^23.6.0",
+    "babel-preset-env": "^1.7.0",
+    "jest": "^23.6.0",
+    "regenerator-runtime": "^0.13.1"
+  },
+  "babel": {
+    "presets": [
+      "env"
+    ]
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.js$": "./node_modules/babel-jest"
+    }
+  }
 }
