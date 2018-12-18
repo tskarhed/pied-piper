@@ -1,0 +1,16 @@
+{
+  "name": "flute-tab",
+  "version": "0.0.1",
+  "description": "Create tin whistle tabs!",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "tin",
+    "whislte",
+    "tabs"
+  ],
+  "author": "Tobias Skarhed",
+  "license": "ISC"
+}
