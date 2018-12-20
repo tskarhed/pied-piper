@@ -1,4 +1,4 @@
-import Note from './note';
+import Note from './note.js';
 let note;
 
 describe('Note class', () => {
