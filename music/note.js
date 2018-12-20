@@ -13,8 +13,13 @@ export default class Note {
         let htmlString = ``;
         let noteOrder = NoteOrder[this.note];
         noteOrder.forEach((hole, i) => {
-            let holeHTML = (hole == '+') ? `<div class="plus">+</div>` : (hole ? `<div class="covered"></div>` : `<div class="open"></div>`);
-            
+            let holeHTML = '';
+            if(i == 6){
+                holeHTML = (hole == '+') ? `<div class="plus"><span>+</span></div>` : '';
+            } else{
+                holeHTML =  (hole ? `<div class="covered"></div>` : `<div class="open"></div>`);
+            }
+
             htmlString += holeHTML;
         });
         return htmlString;
