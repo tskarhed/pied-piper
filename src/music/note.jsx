@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import NoteOrder from "./noteOrder.js";
 import PropTypes from "prop-types";
-import noteOrder from "./noteOrder.js";
+import FullHole from "../../public/square.svg";
 
 export default class Note extends Component {
     constructor(props){
@@ -24,7 +24,7 @@ export default class Note extends Component {
                     }
 
                     if(hole == 2){
-                        return <div className="covered" key={i}></div>;
+                        return <FullHole className="covered" key={i}/>
                     }
 
                     if(hole == 0){
