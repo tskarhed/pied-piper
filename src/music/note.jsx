@@ -7,26 +7,17 @@ export default class Note extends Component {
     constructor(props){
         super(props);
         this.state = {...props};
-        this.state.noteOrder = NoteOrder[props.note];
+        this.state.noteOrder = NoteOrder[props.note] || 0;
     }
 
 
     render(){
-        // console.log("Rendering");
-        // let htmlString = ``;
-        // noteOrder.forEach((hole, i) => {
-        //     let holeHTML = '';
-        //     if(i == 6){
-        //         holeHTML = (hole == '+') ? `<div class="plus"><span>+</span></div>` : '';
-        //     } else{
-        //         holeHTML =  (hole ? `<div class="covered"></div>` : `<div class="open"></div>`);
-        //     }
 
-        //     htmlString += holeHTML;
-        // });
         return (
             <div className="note">{
+                this.state.noteOrder ?
                 this.state.noteOrder.map((hole, i) => {
+
                     if(i == 6){
                         //Check octave
                         return (hole == '+') ? <div className="plus" key={i}><span>+</span></div> : '';
@@ -39,7 +30,7 @@ export default class Note extends Component {
                     if(hole == 0){
                         return <div className="open" key={i}></div>;
                     }
-                })
+                }) : <div className="empty"></div>
         }</div>);
     }
 };

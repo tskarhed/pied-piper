@@ -1,29 +1,39 @@
 import React, {Component} from "react";
+import PropTypes from "prop-types";
+
 import NoteGroup from "./music/note-group";
+import AddNote from "./music/add-note";
 import './style.css';
 
 export default class App extends Component{
+    constructor(props){
+        super(props);
+        this.state = {
+            title: "This is the title",
+            notes: ["F#", "d", "g", "a", "B", "A"]
+        }
+    }
+
+    addNote(note){
+        let nextNotes = this.state.notes;
+        nextNotes.push(note);
+        console.log(nextNotes);
+        this.setState({...this.state, notes: nextNotes});
+        console.log(this.state.notes);
+    }
+
     render(){
         return(
             <React.Fragment>
-            <h1>This is the title</h1>
-            <NoteGroup notes={["F#", "d", "g", "a", "B", "A"]}/>
+            <h1>{this.state.title}</h1>
+            <NoteGroup notes={this.state.notes}/>
+            <AddNote onSubmit={this.addNote.bind(this)}/>
             </React.Fragment>
         );
     }
 }
 
-/*
-function addNote(noteName){
-    let note = new Note(noteName);
-
-    container.innerHTML += `<div class="note">${note.render()}</div>`;
-    console.log(container.innerHTML);
-
-}
-
-document.forms['addNote'].onsubmit = function(e){
-    e.preventDefault();
-    addNote(document.forms['addNote']['note'].value);
+App.propTypes = {
+    notes: PropTypes.arrayOf(PropTypes.string),
+    title: PropTypes.string
 };
-*/
