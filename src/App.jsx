@@ -1,12 +1,14 @@
 import React, {Component} from "react";
-import Note from "./music/note.js";
-
-let container = document.querySelector(".notes");
+import NoteGroup from "./music/note-group";
+import './style.css';
 
 export default class App extends Component{
     render(){
         return(
+            <React.Fragment>
             <h1>This is the title</h1>
+            <NoteGroup notes={["F#", "d", "g", "a", "B", "A"]}/>
+            </React.Fragment>
         );
     }
 }
