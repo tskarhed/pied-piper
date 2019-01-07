@@ -1,13 +1,18 @@
 const path = require("path");
+const webpack = require("webpack");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
     entry: "./src/index.js",
     plugins: [
+        new webpack.DefinePlugin({
+            __VERSION__: JSON.stringify(process.env.npm_package_version)
+        }),
         new CleanWebpackPlugin(['dist']),
         new HtmlWebpackPlugin({
-            title: "Production"
+            title: "Flute Site",
+            template: './public/index.html'
         })
     ],
     module: {
