@@ -51,6 +51,7 @@ export default class App extends Component{
                     })}
                 </div>
                 <AddNote onSubmit={this.addNote.bind(this)}/>
+                <p>Version:  {__VERSION__}</p>
             </React.Fragment>
         );
     }
