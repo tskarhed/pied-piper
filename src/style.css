@@ -21,10 +21,6 @@ body{
 
 }
 
-.covered{
-    background-image: url('../public/square.svg');
-}
-
 .plus{
     font-weight: bold;
     display: flex;

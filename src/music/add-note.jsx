@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import noteOrder from "./noteOrder";
 
 export default class AddNote extends React.Component {
     constructor(props){
@@ -16,8 +17,11 @@ export default class AddNote extends React.Component {
     render(){
         return (
             <React.Fragment>
-                <input onChange={(e) => this.handleChange(e)} value={this.state.value}/>
-                <button onClick={() => this.props.onSubmit(this.state.value)}>Add note</button>
+                <select onChange={(e) => this.props.onSubmit(e.value)}>
+                    {Object.keys(noteOrder).map((note) => {
+                        return <option>{note}</option>
+                    })}
+                </select>
             </React.Fragment>);
     }
 };
