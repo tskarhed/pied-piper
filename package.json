@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --watch --verbose false",
-    "start": "webpack --config ./webpack.dev.js && webpack-dev-server --config ./webpack.dev.js --inline --hot --content-base ./public",
+    "start": "webpack --config ./webpack.dev.js && webpack-dev-server --config ./webpack.dev.js --inline --content-base ./public",
 
     "build": "webpack --config webpack.prod.js"
   },

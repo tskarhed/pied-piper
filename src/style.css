@@ -11,6 +11,15 @@ body{
     width: 20px;
 }
 
+.note.selected{
+    box-shadow: 0 0 5px blue;
+}
+
+.note.empty{
+    height: 20px;
+    background-color: grey;
+}
+
 .covered, .open, .plus{
     display: block;
     width: 10px;

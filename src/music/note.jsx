@@ -13,7 +13,7 @@ export default class Note extends Component {
         this.state.noteOrder = NoteOrder[this.props.note] || 0;
 
         return (
-            <div className="note" onClick={this.props.onClick}>{
+            <div className={this.props.selected ? 'note selected' : 'note'} onClick={this.props.onClick}>{
                 this.state.noteOrder ?
                 this.state.noteOrder.map((hole, i) => {
 
@@ -29,7 +29,7 @@ export default class Note extends Component {
                     if(hole == 0){
                         return <div className="open" key={i}></div>;
                     }
-                }) : <div className="empty"></div>
+                }) : <div className="note empty"></div>
         }</div>);
     }
 };
