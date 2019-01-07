@@ -1,9 +1,15 @@
 const path = require("path");
-const webpack = require("webpack");
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
     entry: "./src/index.js",
-    mode: "development",
+    plugins: [
+        new CleanWebpackPlugin(['dist']),
+        new HtmlWebpackPlugin({
+            title: "Production"
+        })
+    ],
     module: {
         rules: [
             {
@@ -35,15 +41,7 @@ module.exports = {
     resolve: {extensions: ["*", ".js", ".jsx"]},
     output: {
         path: path.resolve(__dirname, "dist/"),
-        publicPath: "/dist/",
+        publicPath: "./",
         filename: "bundle.js"
-    },
-    devServer: {
-        contentBase: path.join(__dirname, "public/"),
-        port: 3000,
-        publicPath: "http://localhost:3000/dist/",
-        hotOnly: true
-    },
-    devtool: "eval-source-map",
-    plugins: [new webpack.HotModuleReplacementPlugin()]
+    }
 };
