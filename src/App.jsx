@@ -8,12 +8,14 @@ import Header from "./layout/header";
 
 import './style.css';
 
+let localStorage = window.localStorage;
+
 export default class App extends Component{
     constructor(props){
         super(props);
         this.state = {
             title: "Skye Boat Song - Scottish folk song",
-            notes: ["F#", "d", "g", "a", "B", "A"]
+            notes: JSON.parse(localStorage.getItem("notes")) || ["F#", "d", "g", "a", "B", "A"]
         }
     }
 
@@ -23,6 +25,8 @@ export default class App extends Component{
         nextNotes.push(note);
         console.log(nextNotes);
         this.setState({...this.state, notes: nextNotes});
+
+        localStorage.setItem("notes", JSON.stringify(nextNotes));
         console.log(this.state.notes);
     }
 
@@ -31,6 +35,8 @@ export default class App extends Component{
         nextNotes.splice(index, 1);
 
         this.setState({...this.state, notes: nextNotes});
+
+        localStorage.setItem("notes", JSON.stringify(nextNotes));
     }
 
     render(){
