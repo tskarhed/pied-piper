@@ -12,7 +12,8 @@ module.exports = {
         new CleanWebpackPlugin(['dist']),
         new HtmlWebpackPlugin({
             title: "Flute Site",
-            template: './public/index.html'
+            template: './public/index.html',
+            hash: true,
         })
     ],
     module: {
