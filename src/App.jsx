@@ -1,8 +1,8 @@
 import React, {Component} from "react";
 import PropTypes from "prop-types";
 
-import NoteGroup from "./music/note-group";
 import AddNote from "./music/add-note";
+import Note from "./music/note";
 
 import Header from "./layout/header";
 
@@ -18,11 +18,19 @@ export default class App extends Component{
     }
 
     addNote(note){
+        console.log(note);
         let nextNotes = this.state.notes;
         nextNotes.push(note);
         console.log(nextNotes);
         this.setState({...this.state, notes: nextNotes});
         console.log(this.state.notes);
+    }
+
+    removeNote(index){
+        let nextNotes = this.state.notes;
+        nextNotes.splice(index, 1);
+
+        this.setState({...this.state, notes: nextNotes});
     }
 
     render(){
@@ -31,7 +39,11 @@ export default class App extends Component{
                 <Header>
                     <h1>{this.state.title}</h1>
                 </Header>
-                <NoteGroup notes={this.state.notes}/>
+                <div className="noteGroup">
+                    {this.state.notes.map((note, i) => {
+                        return <Note note={note} onClick={() => this.removeNote(i)} key={i}/>
+                    })}
+                </div>
                 <AddNote onSubmit={this.addNote.bind(this)}/>
             </React.Fragment>
         );

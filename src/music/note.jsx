@@ -7,14 +7,13 @@ export default class Note extends Component {
     constructor(props){
         super(props);
         this.state = {...props};
-        this.state.noteOrder = NoteOrder[props.note] || 0;
     }
 
-
     render(){
+        this.state.noteOrder = NoteOrder[this.props.note] || 0;
 
         return (
-            <div className="note">{
+            <div className="note" onClick={this.props.onClick}>{
                 this.state.noteOrder ?
                 this.state.noteOrder.map((hole, i) => {
 

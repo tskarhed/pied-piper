@@ -17,9 +17,9 @@ export default class AddNote extends React.Component {
     render(){
         return (
             <React.Fragment>
-                <select onChange={(e) => this.props.onSubmit(e.value)}>
-                    {Object.keys(noteOrder).map((note) => {
-                        return <option>{note}</option>
+                <select onChange={(e) => this.props.onSubmit(e.target.value)}>
+                    {Object.keys(noteOrder).map((note, i) => {
+                        return <option key={i}>{note}</option>
                     })}
                 </select>
             </React.Fragment>);
