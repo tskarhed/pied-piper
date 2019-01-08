@@ -21,7 +21,7 @@ export default class Note extends Component {
 
                     if(i == 6){
                         //Check octave
-                        return (hole == '+') ? <div className="plus" key={i}><span>+</span></div> : '';
+                        return (hole == '+') ? <div className="plus" key={i}><span>+</span></div> : <div key={i} style={{height: 16}}></div>;
                     }
 
                     if(hole == 2){

@@ -6,8 +6,10 @@ import Note from "./music/note";
 import NoteOrder from "./music/noteOrder.js";
 
 import Header from "./layout/header";
+import Content from "./layout/content";
 
 import './style.css';
+import './layout/layout.css';
 
 let localStorage = window.localStorage;
 
@@ -17,7 +19,8 @@ export default class App extends Component{
         this.state = {
             selected: undefined,
             title: "Skye Boat Song - Scottish folk song",
-            notes: JSON.parse(localStorage.getItem("notes")) || []
+            notes: JSON.parse(localStorage.getItem("notes")) || ['d', 'e', 'd', 'g', 'g', 'a', 'b','a','D','b','a','b','e','e','d','d','b','g','b','b','a','e','a','a','g', 'e','g','g','g','e','d','d', 'e', 'd', 'g', 'g', 'a', 'b','a','D','b','a','b','e','e','d','d'],
+            description: "'The Skye Boat Song' is a modern Scottish song which has entered into the folk canon in recent times. It can be played as a waltz, recalling the escape of Prince Charles Edward Stuart (Bonnie Prince Charlie) from Uist to the Isle of Skye after his defeat at the Battle of Culloden in 1746."
         }
 
         //Check for keypress for navigation
@@ -97,15 +100,17 @@ export default class App extends Component{
     render(){
         return(
             <React.Fragment>
-                <Header>
-                    <h1>{this.state.title}</h1>
-                </Header>
-                <div className="noteGroup">
-                    {this.state.notes.map((note, i) => {
-                        return <Note note={note} selected={i==this.state.selected} onClick={() => this.removeNote(i)} key={i}/>
-                    })}
-                </div>
-                <AddNote onSubmit={this.addNote.bind(this)}/>
+                <Content>
+                    <Header>
+                        <h1>{this.state.title}</h1>
+                        <p>{this.state.description}</p>
+                    </Header>
+                    <div className="noteGroup">
+                        {this.state.notes.map((note, i) => {
+                            return <Note note={note} selected={i==this.state.selected} onClick={() => this.removeNote(i)} key={i}/>
+                        })}
+                    </div>
+                </Content>
                 <footer className="footer">
                     <i className="im im-heart"></i>
                     <p>Version:  {__VERSION__}</p>

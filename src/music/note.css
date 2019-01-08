@@ -3,10 +3,11 @@
     display: inline-flex;
     flex-direction: column;
     width: 20px;
+    margin: 0 5px;
 }
 
 .note.selected{
-    box-shadow: 0 0 5px blue;
+    box-shadow: 0 0 5px 5px green;
 }
 
 .note.empty{

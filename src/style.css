@@ -4,26 +4,5 @@ body{
     font-family: 'Montserrat', sans-serif;
     margin: 0;
     background-image: url('../public/bg-noise-texture.png');
-}
-
-/*FOOTER*/
-.footer{
-    font-size: 0.8em;
-    display: flex;
-    position: absolute;
-    bottom: 0;
-    justify-content: space-between;
-    width: 100%;
-    color: white;
-    background-color: green;
-    vertical-align: baseline;    
-}
-
-.footer > a > span {
-    vertical-align: sub;
-}
-
-.footer a, .footer i{
-    color: white;
-    margin: auto 5px;
+    color: #333;
 }
