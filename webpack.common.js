@@ -26,7 +26,12 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                use: ["style-loader", "css-loader"]
+                use: ["style-loader", {
+                    loader: "css-loader",
+                    options: {
+                        url: false
+                    }  
+                }]
             },
             {
                 test: /\.svg$/,
@@ -47,7 +52,7 @@ module.exports = {
     resolve: {extensions: ["*", ".js", ".jsx"]},
     output: {
         path: path.resolve(__dirname, "./"),
-        publicPath: "./",
-        filename: "bundle.js"
+
+        filename: "./dist/bundle.js"
     }
 };

@@ -3,42 +3,27 @@
 body{
     font-family: 'Montserrat', sans-serif;
     margin: 0;
+    background-image: url('../public/bg-noise-texture.png');
 }
 
-.note{
-    display: inline-flex;
-    flex-direction: column;
-    width: 20px;
-}
-
-.note.selected{
-    box-shadow: 0 0 5px blue;
-}
-
-.note.empty{
-    height: 20px;
-    background-color: grey;
-}
-
-.covered, .open, .plus{
-    display: block;
-    width: 10px;
-    height: 10px;
-    margin: 3px auto;
-    border: solid black 1px;
-    border-radius: 50%;
-
-}
-
-.plus{
-    font-weight: bold;
+/*FOOTER*/
+.footer{
+    font-size: 0.8em;
     display: flex;
-    align-items: center;
+    position: absolute;
+    bottom: 0;
+    justify-content: space-between;
     width: 100%;
-    border: none;
-    text-align: center;
+    color: white;
+    background-color: green;
+    vertical-align: baseline;    
 }
 
-.plus span{
-    width: 100%;
+.footer > a > span {
+    vertical-align: sub;
+}
+
+.footer a, .footer i{
+    color: white;
+    margin: auto 5px;
 }

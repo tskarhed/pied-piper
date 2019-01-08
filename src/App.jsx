@@ -17,7 +17,7 @@ export default class App extends Component{
         this.state = {
             selected: undefined,
             title: "Skye Boat Song - Scottish folk song",
-            notes: JSON.parse(localStorage.getItem("notes")) || ["F#", "d", "g", "a", "B", "A"]
+            notes: JSON.parse(localStorage.getItem("notes")) || []
         }
 
         //Check for keypress for navigation
@@ -106,7 +106,15 @@ export default class App extends Component{
                     })}
                 </div>
                 <AddNote onSubmit={this.addNote.bind(this)}/>
-                <p>Version:  {__VERSION__}</p>
+                <footer className="footer">
+                    <i className="im im-heart"></i>
+                    <p>Version:  {__VERSION__}</p>
+                    <a href="https://twitter.com/tskarhed">
+                        
+                    <span className="im">&#xe0b1;</span> Any feedback?
+                    </a>
+                </footer>
+                
             </React.Fragment>
         );
     }

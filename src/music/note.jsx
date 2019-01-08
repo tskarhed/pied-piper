@@ -3,6 +3,8 @@ import NoteOrder from "./noteOrder.js";
 import PropTypes from "prop-types";
 import FullHole from "../../public/square.svg";
 
+import "./note.css";
+
 export default class Note extends Component {
     constructor(props){
         super(props);
