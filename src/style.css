@@ -3,6 +3,6 @@
 body{
     font-family: 'Montserrat', sans-serif;
     margin: 0;
-    background-image: url('../public/bg-noise-texture.png');
+    background-image: url('./public/bg-noise-texture.png');
     color: #333;
 }
