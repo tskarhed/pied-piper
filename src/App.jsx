@@ -39,7 +39,7 @@ export default class App extends Component{
                 this.setState({selected: (this.state.selected == undefined ? 0 : (this.state.selected+1) % this.state.notes.length) });
                 break;
             case 'ArrowLeft':
-                this.setState({selected: (this.state.selected == undefined ? 0 : this.state.selected == 0 ? this.state.notes.length-1 : (this.state.selected-1) % this.state.notes.length) });
+                this.setState({selected: (this.state.selected == undefined ? this.state.notes.length-1 : this.state.selected == 0 ? this.state.notes.length-1 : (this.state.selected-1) % this.state.notes.length) });
                 break;
 
                 //Consider if these should loop inifintely
@@ -48,7 +48,17 @@ export default class App extends Component{
                 break;
             case 'ArrowDown':
                 this.updateNote(this.state.selected, orderOfNotes[ currentIndex == 0 ? 0 : currentIndex - 1]);
-            break;
+                break;
+            case 'Delete':
+                this.removeNote(this.state.selected);
+                if(this.state.selected == this.state.notes.length){
+                    this.setState({selected: this.state.notes.length-1});
+                }
+                break;
+            case 'Enter':
+                this.addNote('d');
+                this.setState({selected: this.state.notes.length-1});
+                break;
             
         }
         
