@@ -19,6 +19,10 @@ module.exports = {
     module: {
         rules: [
             {
+                test: /\.(png|jpg|gif|svg)$/,
+                loader: 'url-loader',
+            },
+            {
                 test: /\.(js|jsx)$/,
                 exclude: /(node_modules)/,
                 loader: "babel-loader",
@@ -32,20 +36,6 @@ module.exports = {
                         url: false
                     }  
                 }]
-            },
-            {
-                test: /\.svg$/,
-                use: [
-                    {
-                        loader: "babel-loader"
-                    },
-                    {
-                        loader: 'react-svg-loader',
-                        options: {
-                            jsx: true
-                        }
-                    }
-                ]
             }
         ]
     },

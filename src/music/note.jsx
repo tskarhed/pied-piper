@@ -25,7 +25,7 @@ export default class Note extends Component {
                     }
 
                     if(hole == 2){
-                        return <FullHole className="covered" key={i}/>
+                        return <img src={FullHole} className="covered" key={i}/>
                     }
 
                     if(hole == 0){
