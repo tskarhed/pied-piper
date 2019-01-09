@@ -40,10 +40,10 @@ export default class App extends Component{
                 this.setState({selected:undefined});
                 break;
             case 'ArrowRight':
-                this.setState({selected: (this.state.selected == undefined ? 0 : (this.state.selected+1) % this.state.notes.length) });
+                this.setState({selected: (this.state.selected == undefined ? 0 : (this.state.selected+1) % (this.state.notes.length +1 )) });
                 break;
             case 'ArrowLeft':
-                this.setState({selected: (this.state.selected == undefined ? this.state.notes.length-1 : this.state.selected == 0 ? this.state.notes.length-1 : (this.state.selected-1) % this.state.notes.length) });
+                this.setState({selected: (this.state.selected == undefined ? this.state.notes.length : this.state.selected == 0 ? this.state.notes.length : (this.state.selected-1) % this.state.notes.length) });
                 break;
 
                 //Consider if these should loop inifintely
@@ -53,6 +53,7 @@ export default class App extends Component{
             case 'ArrowDown':
                 this.updateNote(this.state.selected, orderOfNotes[ currentIndex == 0 ? 0 : currentIndex - 1]);
                 break;
+            case 'Backspace':
             case 'Delete':
                 this.removeNote(this.state.selected);
                 if(this.state.selected == this.state.notes.length){
@@ -60,8 +61,10 @@ export default class App extends Component{
                 }
                 break;
             case 'Enter':
-                this.addNote('d');
-                this.setState({selected: this.state.notes.length-1});
+                if(this.state.selected == this.state.notes.length){
+                    this.addNote('d');
+                    this.setState({selected: this.state.notes.length});
+                }
                 break;
             
         }
@@ -113,6 +116,8 @@ export default class App extends Component{
                         {this.state.notes.map((note, i) => {
                             return <Note note={note} selected={i==this.state.selected} onClick={() => this.removeNote(i)} key={i}/>
                         })}
+
+                        <AddNote selected={this.state.selected == this.state.notes.length} action={() => this.addNote('d')}/>
                     </div>
                 </Content>
                 <footer className="footer">
