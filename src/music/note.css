@@ -9,7 +9,7 @@
     margin-top: 10px;
 }
 
-.note.selected, .addNote.selected{
+.note.selected, .addNote.selected, .addNote:hover{
     box-shadow: 0 0 5px 5px green;
 }
 
@@ -42,6 +42,8 @@
 }
 
 .addNote{
+    cursor: pointer;
+
     display: inline-flex;
     flex-direction: row;
     align-items: center;
