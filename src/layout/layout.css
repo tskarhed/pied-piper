@@ -42,3 +42,33 @@
     margin: 20px auto;
     display: block;
 }
+
+/*MENU*/
+.menu.menu{
+    width: 60px;
+    position: fixed;
+    height: 100%;
+}
+
+.menu.menuItems{
+    width: 60px;
+}
+
+.menu.menuItem, .menu.menuIcon{
+    position: static;
+    text-align: center;
+    width: 60px;
+    height: 60px;
+    display: block;
+    text-decoration: none;
+}
+
+.menu.menuItem{
+    color: grey;
+    font-size: 12px;
+    margin: 2px auto;
+}
+
+.menu.menuItem i{
+    display: block;
+}

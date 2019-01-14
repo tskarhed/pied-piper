@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import {BrowserRouter as Router, Route } from "react-router-dom";
 
 import Song from "./music/song";
+import Menu from "./layout/menu";
 
 import Content from "./layout/content";
 
@@ -20,11 +21,11 @@ export default class App extends Component{
     render(){
         return(
         <React.Fragment>
+            <Menu/>
             <Content>
                 <Route path="/" component={Song}/>
             </Content>
             <footer className="footer">
-                <i className="im im-heart"></i>
                 <p>Version:  {__VERSION__}</p>
                 <a href="https://twitter.com/tskarhed">
                     

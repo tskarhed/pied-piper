@@ -6,7 +6,6 @@ import Note from "./note";
 import NoteOrder from "./noteOrder.js";
 
 import Header from "../layout/header";
-import Content from "../layout/content";
 import Ornament from "../../public/ornament.svg";
 
 let localStorage = window.localStorage;
