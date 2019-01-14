@@ -5,4 +5,5 @@ body{
     margin: 0;
     background-image: url('./public/bg-noise-texture.png');
     color: #333;
+    padding-top: 20px;
 }

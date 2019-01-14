@@ -1,9 +1,10 @@
 import React, {Component} from "react";
 import PropTypes from "prop-types";
 
-import {BrowserRouter as Router, Route } from "react-router-dom";
+import {Route, Switch } from "react-router-dom";
 
 import Song from "./music/song";
+import SongList from "./music/songList";
 import Menu from "./layout/menu";
 
 import Content from "./layout/content";
@@ -23,7 +24,11 @@ export default class App extends Component{
         <React.Fragment>
             <Menu/>
             <Content>
-                <Route path="/" component={Song}/>
+                <Switch>
+                    <Route exact path="/" component={SongList}/>
+
+                    <Route path="/song" component={Song}/>
+                </Switch>
             </Content>
             <footer className="footer">
                 <p>Version:  {__VERSION__}</p>

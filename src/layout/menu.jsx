@@ -7,16 +7,8 @@ import "../style.css";
 
 let routes = [
     {
-        name: "Home",
-        path: "/",
-        icon: "home"
-    },{
         name: "My songs",
-        path: "/my-songs",
-        icon: "briefcase"
-    },{
-        name: "Saved songs",
-        path: "/library",
+        path: "/",
         icon: "archive"
     },{
         name: "New songs",
