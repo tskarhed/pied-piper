@@ -27,7 +27,7 @@ export default class App extends Component{
                 <Switch>
                     <Route exact path="/" component={SongList}/>
 
-                    <Route path="/song" component={Song}/>
+                    <Route path="/song/:id" component={Song}/>
                 </Switch>
             </Content>
             <footer className="footer">
