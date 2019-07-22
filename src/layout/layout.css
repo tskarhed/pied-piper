@@ -76,8 +76,10 @@
 
 /*SONG LIST*/
 .songList.item {
+  position: relative;
   display: inline-block;
   width: 300px;
+  height: 250px;
   color: grey;
   text-decoration: none;
   margin: 5px;
@@ -85,6 +87,7 @@
   border: solid 1px #ccc;
   padding: 2px 10px;
   transition: box-shadow 0.2s ease-in-out;
+  vertical-align: middle;
 }
 
 .songList.item h2 {
@@ -92,5 +95,5 @@
 }
 
 .songList.item:hover {
-  box-shadow: 0 0 5px 5px green;
+  box-shadow: 0 0 5px 0 green;
 }

@@ -133,8 +133,8 @@ export default class Song extends Component {
               <Note
                 note={note}
                 selected={i == this.state.selected}
-                onClick={() => this.removeNote(i)}
                 key={i}
+                onUpdate={note => this.updateNote(i, note)}
               />
             );
           })}
