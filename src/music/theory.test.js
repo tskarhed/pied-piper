@@ -20,6 +20,12 @@ describe('Music theory', () => {
 
     });
 
+    describe('should encode scientific notation from number', () => {
+        it('encodes properly', () => {
+            expect(theory.encodeNotation(13)).toBe('C#1');
+        });
+    });
+
     describe('should return proper frequencies', () => {
         it('A4', () => {
             expect(theory.getFrequency(57)).toBe(440);

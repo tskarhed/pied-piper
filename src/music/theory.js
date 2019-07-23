@@ -1,4 +1,17 @@
+
+const notes = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'];
+        
 export class Theory {
+    constructor(notation = 'A4'){
+        const note = this.decodeNotation(notation);
+
+        this.note = note.note;
+        this.noteIndex = note.noteIndex;
+        this.octave = note.octave;
+        this.absoluteHalfSteps = note.absolute;
+        this.freq = this.getFrequency(note.absolute);
+
+    }
     
     // private
     // @n n half notes steps from C0 (Including black keys). Starts at C0. A4 is number 57.
@@ -19,9 +32,14 @@ export class Theory {
         const octave = parseInt(string.slice(-1), 10);
 
 
-        const notes = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G0', 'G#', 'A', 'A#', 'B'];
         return { note, noteIndex: notes.indexOf(note), octave, absolute: notes.indexOf(note) + 12* octave};
 
+    }
+
+    encodeNotation(n){
+        const note = notes[n % 12];
+        const octave = Math.floor(Math.floor(n)/12);
+        return note + octave;
     }
 
     setOctave(octave){
