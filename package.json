@@ -4,7 +4,8 @@
   "description": "Create tin whistle tabs!",
   "main": "index.js",
   "scripts": {
-    "test": "jest --watch --verbose false",
+    "test": "jest",
+    "jest": "jest --watch --verbose false",
     "start": "webpack --config ./webpack.dev.js && webpack-dev-server --config ./webpack.dev.js --inline --content-base ./public",
     "build": "webpack --config webpack.prod.js",
     "server": "nodemon server/server.js"
