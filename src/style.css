@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700");
 
-body{
-    font-family: 'Montserrat', sans-serif;
-    margin: 0;
-    background-image: url('./public/bg-noise-texture.png');
-    color: #333;
-    padding-top: 20px;
+body {
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  background-image: url("../public/bg-noise-texture.png");
+  color: #333;
+  padding-top: 20px;
 }
