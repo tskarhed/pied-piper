@@ -1,6 +1,8 @@
 # :musical_score: Flute Tab - Tabs for Tin Whistles
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/39471a4e-5db0-4c97-97bd-bc1a04175f30/deploy-status)](https://app.netlify.com/sites/pied-piper/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/39471a4e-5db0-4c97-97bd-bc1a04175f30/deploy-status)](https://app.netlify.com/sites/pied-piper/deploys)[![CircleCI](https://circleci.com/gh/dehrax/flute-tab/tree/master.svg?style=svg)](https://circleci.com/gh/dehrax/flute-tab/tree/master)
+
+## Develop
 
 Get started by running
 
@@ -16,4 +18,3 @@ It runs webpack and all the other good stuff.
 
 html-template is in the /public folder.
 
-## Develop
