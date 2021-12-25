@@ -3,13 +3,30 @@
         <title><%= htmlWebpackPlugin.options.title%></title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../src/style.css"/>
         <link rel="stylesheet" href="https://cdn.iconmonstr.com/1.3.0/css/iconmonstr-iconic-font.min.css">
     </head>
 
     <body>
-        <noscript>
-            Javascript is needed to run this application
-        </noscript>
-        <div id="appRoot"></div>
+        <h1>Pied Piper - Flute tabs</h1>
+        Here you can make your own flute tabs.
+
+        <form>
+
+            <textarea name="Note input" id="note-input"></textarea>
+        </form>
+        <section>
+            <h2>Song output</h2>
+            <div class="note" aria-label="Note G">
+                <div class="covered"></div>
+                <div class="covered"></div>
+                <div class="covered"></div>
+                <div class="half covered"></div>
+                <div class="open"></div>
+                <div class="open"></div>
+                <div class="plus"></div>
+            </div>
+
+        </section>
     </body>
 </html>

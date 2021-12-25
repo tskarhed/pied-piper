@@ -7,3 +7,27 @@ body {
   color: #333;
   padding-top: 20px;
 }
+
+.note {
+  display: inline-block;
+  padding: 0.5rem;
+}
+
+.covered,
+.open,
+.plus {
+  display: block;
+  width: 0.7rem;
+  height: 0.7rem;
+  margin: 0.2rem auto;
+  border: solid black 0.1rem;
+  border-radius: 50%;
+}
+
+.covered {
+  background-color: black !important; /*important for print*/
+}
+
+.half.covered {
+  background: linear-gradient(black 60%, white 40%);
+}
