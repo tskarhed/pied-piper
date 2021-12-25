@@ -8,9 +8,23 @@ body {
   padding-top: 20px;
 }
 
+main {
+  width: min(800px, 95%);
+  margin: 0 auto;
+}
+
+textarea {
+  width: 100%;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
 .note {
   display: inline-block;
-  padding: 0.5rem;
+  padding: 0.3rem;
+  vertical-align: top;
 }
 
 .covered,
@@ -30,4 +44,9 @@ body {
 
 .half.covered {
   background: linear-gradient(black 60%, white 40%);
+}
+
+.plus {
+  border: none;
+  font-weight: bold;
 }
