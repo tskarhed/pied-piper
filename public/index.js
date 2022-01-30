@@ -36,7 +36,7 @@ function csvToHoles(csvNotes){
         // Ignore input if no cases match
     });
 
-    return songHoles;
+    return [songHoles,notes];
 
 }
 
@@ -62,12 +62,12 @@ function renderFluteElement(noteMap){
 }
 
 inputElement.addEventListener("input", function(event) {
-    console.log(event);
-    const holeMap = csvToHoles(event.target.value);
+    const [holeMap, notes] = csvToHoles(event.target.value);
     const fluteElements = [];
-    holeMap.forEach(function(holes){
-        fluteElements.push(`<div class="note">${renderFluteElement(holes).join('')}</div>`);  
+    holeMap.forEach(function(holes, i){
+        let space = holes.indexOf("SPACE") != -1;
+        console.log(space);
+        fluteElements.push(`<div class="note ${space ? "space" : ""}" aria-label="${notes[i]} note">${renderFluteElement(holes).join('')}</div>`);  
     });
-    console.log(fluteElements);
     songElement.innerHTML = fluteElements.join('');
 })

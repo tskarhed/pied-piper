@@ -23,8 +23,12 @@ h1 {
 
 .note {
   display: inline-block;
-  padding: 0.3rem;
+  padding: 0.4rem;
   vertical-align: top;
+}
+
+.note.space {
+  width: 1.5rem;
 }
 
 .covered,
