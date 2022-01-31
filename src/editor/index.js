@@ -61,12 +61,11 @@ function renderFluteElement(noteMap){
     })
 }
 
-export function noteStringToHTML(noteString){
-    const [holeMap, notes] = csvToHoles(event.target.value);
+function noteStringToHTML(noteString){
+    const [holeMap, notes] = csvToHoles(noteString);
     const fluteElements = [];
     holeMap.forEach(function(holes, i){
         let space = holes.indexOf("SPACE") != -1;
-        console.log(space);
         fluteElements.push(`<div class="note ${space ? "space" : ""}" aria-label="${notes[i]} note">${renderFluteElement(holes).join('')}</div>`);  
     });
 

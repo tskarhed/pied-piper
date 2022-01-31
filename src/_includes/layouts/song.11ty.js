@@ -63,7 +63,6 @@ function noteStringToHTML(noteString){
     const fluteElements = [];
     holeMap.forEach(function(holes, i){
         let space = holes.indexOf("SPACE") != -1;
-        console.log(space);
         fluteElements.push(`<div class="note ${space ? "space" : ""}" aria-label="${notes[i]} note">${renderFluteElement(holes).join('')}</div>`);  
     });
 
