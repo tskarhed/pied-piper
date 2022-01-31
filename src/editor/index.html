@@ -1,66 +1,14 @@
-<html>
-  <head>
-    <title>Tin Whistle Tabs</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="../style.css" />
-    <script defer src="./index.js"></script>
-  </head>
+---
+layout: base.njk
+---
 
-  <body>
-    <main>
-      <h1>Tin Whistle Tabs editor</h1>
-      Here you can make your own flute tabs.
+<script defer src="./index.js"></script>
 
-      <form>
-        <textarea
-          name="Note input"
-          id="note-input"
-          rows="5"
-          columns="20"
-        ></textarea>
-      </form>
-      <h2>Song output</h2>
-      <section id="song">
-        <div class="note" aria-label="Note G">
-          <div class="covered"></div>
-          <div class="covered"></div>
-          <div class="covered"></div>
-          <div class="half covered"></div>
-          <div class="open"></div>
-          <div class="open"></div>
-          <div class="plus"></div>
-        </div>
-        <div class="note" aria-label="Note G">
-          <div class="covered"></div>
-          <div class="covered"></div>
-          <div class="covered"></div>
-          <div class="half covered"></div>
-          <div class="open"></div>
-          <div class="open"></div>
-          <div class="plus"></div>
-        </div>
-        <div class="note" aria-label="Note G">
-          <div class="covered"></div>
-          <div class="covered"></div>
-          <div class="covered"></div>
-          <div class="half covered"></div>
-          <div class="open"></div>
-          <div class="open"></div>
-          <div class="plus"></div>
-        </div>
-        <div class="note"></div>
+<h1>Tin Whistle Tabs editor</h1>
+Here you can make your own flute tabs.
 
-        <div class="note" aria-label="Note G">
-          <div class="covered"></div>
-          <div class="covered"></div>
-          <div class="covered"></div>
-          <div class="half covered"></div>
-          <div class="open"></div>
-          <div class="open"></div>
-          <div class="plus"></div>
-        </div>
-      </section>
-    </main>
-  </body>
-</html>
+<form>
+  <textarea name="Note input" id="note-input" rows="5" columns="20"></textarea>
+</form>
+<h2>Song output</h2>
+<section id="song"></section>
