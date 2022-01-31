@@ -98,3 +98,14 @@ h1 {
   text-overflow: ellipsis;
   overflow: hidden;
 }
+
+/*Navigation*/
+
+.main-nav {
+  display: flex;
+  justify-content: center;
+}
+
+.main-nav > a {
+  margin: 0 1rem;
+}
