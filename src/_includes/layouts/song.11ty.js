@@ -16,9 +16,6 @@ const noteHoles = {
     "C#":   [0, 0, 0, 0, 0, 0, '+']
 };
 
-const inputElement = document.querySelector("#note-input");
-const songElement = document.querySelector("#song");
-
 function csvToHoles(csvNotes){
     const songHoles = [];
     const notes = csvNotes.split(',');
@@ -61,8 +58,8 @@ function renderFluteElement(noteMap){
     })
 }
 
-export function noteStringToHTML(noteString){
-    const [holeMap, notes] = csvToHoles(event.target.value);
+function noteStringToHTML(noteString){
+    const [holeMap, notes] = csvToHoles(noteString);
     const fluteElements = [];
     holeMap.forEach(function(holes, i){
         let space = holes.indexOf("SPACE") != -1;
@@ -73,6 +70,15 @@ export function noteStringToHTML(noteString){
     return fluteElements.join('');
 }
 
-inputElement.addEventListener("input", function(event) {
-    songElement.innerHTML = noteStringToHTML(event.target.value);
-})
+exports.data = {
+    layout: 'base.njk'
+};
+
+exports.render = function(data){
+    const noteHTML = noteStringToHTML(data.notes);
+    return `
+        <h1>${data.title}</h1>
+        <p>${data.description}</p>
+        ${noteHTML}
+    `
+}
