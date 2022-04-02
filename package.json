@@ -1,6 +1,6 @@
 {
-  "name": "thin-whistle-tabs",
-  "version": "1.0.0",
+  "name": "tin-whistle-tabs",
+  "version": "0.2.0",
   "description": "Tin Whislte",
   "main": "index.js",
   "scripts": {
