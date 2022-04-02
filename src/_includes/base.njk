@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <title>
+    {%if title%}{{title}} | {%endif%}Tin Whistle Tabs
+    </title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+
+  <body>
+    <nav class="main-nav">
+        <a href="/">Song list</a>
+        <a href="/" aria-hidden><img src="/images/ornament.svg"/></a>
+        <a href="/editor">Editor</a>
+    </nav>
+    <main>
+    {{ content | safe }}
+    </main>
+  </body>
+</html>

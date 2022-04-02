@@ -1,0 +1,17 @@
+---
+layout: base.njk
+---
+<h1>Tin Whistle Tabs</h1>
+
+<p>Find your favorite tin whistle tabs here :). Created by @tskarhed.</p>
+
+<ul class="song-list">
+{%- for song in collections.songs -%}
+    <li class="song-list item">
+        <a href={{song.url}}>
+            <h2>{{song.data.title}}</h2>
+            <p>{{song.data.description}}</p>
+        </a>
+    </li>
+{%- endfor -%}
+</ul>

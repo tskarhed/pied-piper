@@ -3,7 +3,109 @@
 body {
   font-family: "Montserrat", sans-serif;
   margin: 0;
-  background-image: url("../public/bg-noise-texture.png");
+  background-image: url("./bg-noise-texture.png");
   color: #333;
   padding-top: 20px;
+}
+
+main {
+  width: min(800px, 95%);
+  margin: 0 auto;
+}
+
+textarea {
+  width: 100%;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+.note {
+  display: inline-block;
+  padding: 0.4rem;
+  vertical-align: top;
+}
+
+.note.space {
+  width: 1.5rem;
+}
+
+.covered,
+.open,
+.plus {
+  display: block;
+  width: 0.7rem;
+  height: 0.7rem;
+  margin: 0.2rem auto;
+  border: solid black 0.1rem;
+  border-radius: 50%;
+}
+
+.covered {
+  background-color: black !important; /*important for print*/
+}
+
+.half.covered {
+  background: linear-gradient(black 60%, white 40%);
+}
+
+.plus {
+  border: none;
+  font-weight: bold;
+}
+
+/*Frontpage collection list*/
+
+.song-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.song-list.item {
+  display: inline-block;
+  border: 1px solid grey;
+  border-radius: 5px;
+  padding: 0.5rem;
+  margin: 0.2rem;
+  height: 200px;
+  width: 300px;
+  max-width: 100%;
+  vertical-align: top;
+}
+
+.song-list.item > a {
+  text-decoration: none;
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+.song-list.item > a:hover h2 {
+  text-decoration: underline;
+}
+
+.song-list.item h2 {
+  margin: 0.8rem 0 0 0.2rem;
+  color: black;
+}
+
+.song-list.item p {
+  color: grey;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+/*Navigation*/
+
+.main-nav {
+  display: flex;
+  justify-content: center;
+}
+
+.main-nav > a {
+  margin: 0 1rem;
 }
