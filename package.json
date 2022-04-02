@@ -19,7 +19,7 @@
     "url": "https://github.com/tskarhed/pied-piper/issues"
   },
   "homepage": "https://github.com/tskarhed/pied-piper#readme",
-  "devDependencies": {
+  "dependencies": {
     "@11ty/eleventy": "^1.0.0"
   }
 }
