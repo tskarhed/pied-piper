@@ -2,6 +2,13 @@
 layout: base.njk
 ---
 
+{% set js %}
+{% include "noteMap.js" %}
+{% endset %}
+<script>
+{{ js | safe}}
+</script>
+
 <script defer src="./index.js"></script>
 
 <h1>Tabs editor</h1>

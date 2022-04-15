@@ -40,7 +40,7 @@ function csvToHoles(csvNotes){
     const notes = csvNotes.split(',');
 
     notes.forEach(function(note){
-        if(note==='\n'){
+        if(note==='Enter'){
             songHoles.push("NEWLINE");
         } else if (note===' ') {
             songHoles.push("SPACE");
@@ -59,9 +59,6 @@ function csvToHoles(csvNotes){
 function renderFluteElement(noteMap){
     if(noteMap === "SPACE"){
         return [];
-    }
-    if(noteMap === "NEWLINE"){
-        return []; //TODO
     }
     return noteMap.map(function(holeState){
         switch(holeState){
@@ -82,10 +79,17 @@ function noteStringToHTML(noteString){
     const fluteElements = [];
     holeMap.forEach(function(holes, i){
         let space = holes.indexOf("SPACE") != -1;
-        fluteElements.push(`<div class="note ${space ? "space" : ""}" aria-label="${notes[i]} note">${renderFluteElement(holes).join('')}</div>`);  
+
+        if(holes === "NEWLINE"){
+            fluteElements.push(`<hr/>`);
+        } else {
+            fluteElements.push(`<div class="note ${space ? "space" : ""}" aria-label="${notes[i]} note">${renderFluteElement(holes).join('')}</div>`);  
+        }
     });
 
     return fluteElements.join('');
 }
 
-exports.noteStringToHTML = noteStringToHTML;
+module.exports = {
+    noteStringToHTML
+}
