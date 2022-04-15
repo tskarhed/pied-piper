@@ -1,0 +1,21 @@
+---
+layout: base.njk
+---
+
+{% set js %}
+{% include "noteMap.js" %}
+{% endset %}
+<script>
+{{ js | safe}}
+</script>
+
+<script defer src="./index.js"></script>
+
+<h1>Tabs editor</h1>
+Here you can make your own flute tabs. Write notes and separate them with commas. Use a space for some spacing and write "Enter" to get a horizontal line. 
+
+<form>
+  <textarea name="Note input" id="note-input" rows="5" columns="20"></textarea>
+</form>
+<h2>Song output</h2>
+<section id="song"></section>

@@ -1,20 +1,17 @@
 # :musical_score: Tin Whistle Tabs
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/39471a4e-5db0-4c97-97bd-bc1a04175f30/deploy-status)](https://app.netlify.com/sites/pied-piper/deploys)
-[![CircleCI](https://circleci.com/gh/dehrax/pied-piper/tree/master.svg?style=svg)](https://circleci.com/gh/dehrax/pied-piper/tree/master)
 
 ## Develop
 
 Get started by running
 
-`yarn install`
+`npm install`
 
-`yarn start`
+`npm start`
 
-It runs webpack and all the other good stuff.
+It runs 11ty in watch mode and starts a web server.
 
 ## Build
 
-`yarn build` creates a `bundle.js` and `index.html` in the root directory, ready to be served. The repo is currently deployed to Netlify, but the plan is to add a backend and run it on Heroku.
-
-html-template is in the /public folder.
+`npm run build` build the site into to static files in the `_site` directory.
