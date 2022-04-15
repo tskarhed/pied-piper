@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "NODE_ENV=development npx @11ty/eleventy --serve ",
-    "build": "npx @11ty/eleventy"
+    "build": "NODE_ENV=production npx @11ty/eleventy"
   },
   "repository": {
     "type": "git",
