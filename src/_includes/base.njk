@@ -6,6 +6,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="/style.css" />
+    {% set js %}
+      {% include "noteMap.js" %}
+    {% endset %}
+    <script>
+      {{ js | safe}}
+    </script>
   </head>
 
   <body>
@@ -17,5 +23,7 @@
     <main>
     {{ content | safe }}
     </main>
+
+    <footer>{{ helpers.currentYear() }} &copy;  <a href="https://twitter.com/tskarhed">Created by tskarhed</a></footer>
   </body>
 </html>
