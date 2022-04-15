@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npx @11ty/eleventy --serve",
+    "start": "NODE_ENV=development npx @11ty/eleventy --serve ",
     "build": "npx @11ty/eleventy"
   },
   "repository": {
@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/tskarhed/pied-piper#readme",
   "dependencies": {
-    "@11ty/eleventy": "^1.0.0"
+    "@11ty/eleventy": "^1.0.0",
+    "eleventy-plugin-ignore": "^0.1.6"
   }
 }
