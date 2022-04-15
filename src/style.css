@@ -6,11 +6,21 @@ body {
   background-image: url("./bg-noise-texture.png");
   color: #333;
   padding-top: 20px;
+  height: calc(100% - 20px);
+
+  display: flex;
+  flex-direction: column;
 }
 
 main {
   width: min(800px, 95%);
   margin: 0 auto;
+  flex: 1 0 auto;
+}
+
+footer {
+  text-align: center;
+  padding: 5px;
 }
 
 textarea {
