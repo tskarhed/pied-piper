@@ -3,3 +3,4 @@ dist
 *.log
 bundle.js
 _site
+out-tsc

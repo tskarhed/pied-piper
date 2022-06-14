@@ -74,6 +74,10 @@ function renderFluteElement(noteMap){
     })
 }
 
+function renderAllNotes(onClick){
+    
+}
+
 function noteStringToHTML(noteString){
     const [holeMap, notes] = csvToHoles(noteString);
     const fluteElements = [];

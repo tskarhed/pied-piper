@@ -21,6 +21,13 @@
   "homepage": "https://github.com/tskarhed/pied-piper#readme",
   "dependencies": {
     "@11ty/eleventy": "^1.0.0",
-    "eleventy-plugin-ignore": "^0.1.6"
+    "eleventy-plugin-ignore": "^0.1.6",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.12",
+    "@types/react-dom": "^18.0.5",
+    "vite": "^2.9.12"
   }
 }
