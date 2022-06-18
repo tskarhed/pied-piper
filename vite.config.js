@@ -2,7 +2,7 @@ import { defineConfig } from "vite";
 import path from "path";
 
 export default defineConfig({
-  
+  mode: "development",
   build:{
     outDir: path.resolve(__dirname, "src/editor"),
     emptyOutDir: false,
@@ -11,6 +11,7 @@ export default defineConfig({
       formats: ["iife"],
       name: "EditorBundle",
       fileName: (format) => `editor-bundle-${format}.js`
-    }
-  }
+    },
+  },
+  
 });

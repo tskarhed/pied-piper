@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "NODE_ENV=development npx @11ty/eleventy --serve ",
+    "start:react": "vite build -w",
     "build": "NODE_ENV=production npx @11ty/eleventy"
   },
   "repository": {
@@ -22,10 +23,12 @@
   "dependencies": {
     "@11ty/eleventy": "^1.0.0",
     "eleventy-plugin-ignore": "^0.1.6",
+    "framer-motion": "^6.3.11",
     "react": "^18.1.0",
     "react-dom": "^18.1.0"
   },
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^22.0.0",
     "@types/react": "^18.0.12",
     "@types/react-dom": "^18.0.5",
     "vite": "^2.9.12"

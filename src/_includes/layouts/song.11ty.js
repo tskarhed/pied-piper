@@ -1,4 +1,4 @@
-const { noteStringToHTML } = require('../noteMap');
+const { noteStringToHTML } = require('../noteMap.js');
 
 exports.data = {
     layout: 'base.njk'

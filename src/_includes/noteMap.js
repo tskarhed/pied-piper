@@ -95,5 +95,6 @@ function noteStringToHTML(noteString){
 }
 
 module.exports = {
-    noteStringToHTML
-}
+    noteStringToHTML,
+    noteMap
+};

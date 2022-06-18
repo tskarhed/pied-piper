@@ -1,5 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { AddNote } from "./AddNote";
+import { NoteList } from "./NoteList";
 
 function init() {
   const rootElement = document.querySelector("#react-root");
@@ -8,8 +10,13 @@ function init() {
     return;
   }
 
-  const element = <h1>Hello, world</h1>;
-  ReactDOM.render(element, rootElement);
+  ReactDOM.render(
+    <>
+      <AddNote />
+      <NoteList />
+    </>,
+    rootElement
+  );
 }
 
 init();
