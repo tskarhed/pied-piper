@@ -1,18 +1,34 @@
-import React, { useEffect, useState } from "react";
-import { LayoutGroup, motion, Reorder } from "framer-motion";
+import React, { FC, useEffect, useState } from "react";
+import { AnimatePresence, LayoutGroup, motion, Reorder } from "framer-motion";
 import { Note } from "./Note";
 
-export const NoteList = () => {
-  const song = ["e", "E", "d", "D", " ", "E", "d", "D"];
+interface Props {
+  song: string[];
+}
+
+export const NoteList: FC<Props> = ({ song }) => {
   const [notesObj, setNotesObj] = useState(generateKeyIds(song));
 
   return (
     <Reorder.Group axis="x" values={notesObj} onReorder={setNotesObj}>
-      {notesObj.map((note) => (
-        <Reorder.Item value={note} key={note.id}>
-          <Note note={note.note} />
-        </Reorder.Item>
-      ))}
+      <AnimatePresence>
+        {notesObj.map((note) => {
+          const isNewline = note.note == "Enter";
+
+          return (
+            <Reorder.Item
+              className={isNewline ? "break" : ""}
+              value={note}
+              key={note.id}
+              initial={{ scale: 0.6 }}
+              animate={{ scale: 1 }}
+              exit={{ scale: 0.2 }}
+            >
+              {isNewline ? <></> : <Note note={note.note} />}
+            </Reorder.Item>
+          );
+        })}
+      </AnimatePresence>
     </Reorder.Group>
   );
 };

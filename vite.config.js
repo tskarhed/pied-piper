@@ -4,6 +4,7 @@ import path from "path";
 export default defineConfig({
   mode: "development",
   build:{
+    sourcemap: "inline",
     outDir: path.resolve(__dirname, "src/editor"),
     emptyOutDir: false,
     lib: {

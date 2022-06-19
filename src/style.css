@@ -151,6 +151,13 @@ h1 {
   flex-wrap: wrap;
 }
 
+.break {
+  flex-basis: 100%;
+  height: 1px;
+  background-color: #777;
+  margin: 2rem auto;
+}
+
 #react-root li {
   position: relative;
 }

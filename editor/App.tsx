@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { Index } from "./Index";
 import { AddNote } from "./AddNote";
 import { NoteList } from "./NoteList";
 
@@ -11,10 +12,7 @@ function init() {
   }
 
   ReactDOM.render(
-    <>
-      <AddNote />
-      <NoteList />
-    </>,
+    <Index/>,
     rootElement
   );
 }

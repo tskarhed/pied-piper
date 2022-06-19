@@ -8,22 +8,60 @@ interface Props {
     event: MouseEvent<HTMLDivElement, globalThis.MouseEvent>,
     value: string
   ) => void;
+  animatePresence?: boolean;
 }
 type State = (number | string)[];
 
-const styles = {
-  cursor: "pointer",
+export const noteVariants = {
+  hover: {
+    scale: 1.1,
+  },
+  hidden: {
+    opacity: 0,
+    scale: 0.4,
+  },
+  normal: {
+    opacity: 1,
+    scale: 1,
+  },
 };
 
-export const Note: FC<Props> = ({ note, onClick }) => {
+export const Note: FC<Props> = ({ note, onClick, animatePresence = false }) => {
+  const styles = {
+    cursor: "pointer",
+  };
+
   if (note == " ") {
-    return <div className="note space"></div>;
+    return (
+      <motion.div
+        onClick={(event) => {
+          if (onClick) onClick(event, note);
+        }}
+        style={styles}
+        className="note space"
+      ></motion.div>
+    );
   } else if (note == "Enter") {
-    return <hr />;
+    return (
+      <motion.hr
+        onClick={(event) => {
+          if (onClick) onClick(event, note);
+        }}
+        style={styles}
+      />
+    );
   }
   const [holes, _setHoles] = useState<State>(noteHoles[note]);
   return (
-    <div
+    <motion.div
+      variants={noteVariants}
+      whileTap="hover"
+      whileDrag="hover"
+      whileHover="hover"
+      whileFocus="hover"
+      initial={animatePresence ? "hidden" : ""}
+      animate={animatePresence ? "normal" : ""}
+      exit={animatePresence ? "hidden" : ""}
       style={styles}
       className="note"
       onClick={(event) => {
@@ -42,6 +80,6 @@ export const Note: FC<Props> = ({ note, onClick }) => {
             return <div className="plus">+</div>;
         }
       })}
-    </div>
+    </motion.div>
   );
 };
