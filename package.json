@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "NODE_ENV=development npx @11ty/eleventy --serve ",
     "start:react": "vite build -w",
-    "build": "NODE_ENV=production npx @11ty/eleventy"
+    "build": "vite build && NODE_ENV=production npx @11ty/eleventy"
   },
   "repository": {
     "type": "git",
