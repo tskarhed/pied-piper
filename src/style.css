@@ -170,3 +170,7 @@ h1 {
 .addNote > * {
   padding: 0;
 }
+
+button {
+  cursor: pointer;
+}
