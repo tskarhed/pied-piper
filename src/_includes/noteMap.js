@@ -74,6 +74,10 @@ function renderFluteElement(noteMap){
     })
 }
 
+function renderAllNotes(onClick){
+    
+}
+
 function noteStringToHTML(noteString){
     const [holeMap, notes] = csvToHoles(noteString);
     const fluteElements = [];
@@ -81,7 +85,7 @@ function noteStringToHTML(noteString){
         let space = holes.indexOf("SPACE") != -1;
 
         if(holes === "NEWLINE"){
-            fluteElements.push(`<hr/>`);
+            fluteElements.push(`<div class="break"><hr/></div>`);
         } else {
             fluteElements.push(`<div class="note ${space ? "space" : ""}" aria-label="${notes[i]} note">${renderFluteElement(holes).join('')}</div>`);  
         }
@@ -91,5 +95,6 @@ function noteStringToHTML(noteString){
 }
 
 module.exports = {
-    noteStringToHTML
-}
+    noteStringToHTML,
+    noteMap
+};

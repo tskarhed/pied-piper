@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "NODE_ENV=development npx @11ty/eleventy --serve ",
-    "build": "NODE_ENV=production npx @11ty/eleventy"
+    "start:react": "vite build -w",
+    "build": "npx vite build && NODE_ENV=production npx @11ty/eleventy"
   },
   "repository": {
     "type": "git",
@@ -21,6 +22,15 @@
   "homepage": "https://github.com/tskarhed/pied-piper#readme",
   "dependencies": {
     "@11ty/eleventy": "^1.0.0",
-    "eleventy-plugin-ignore": "^0.1.6"
+    "vite": "^2.9.12",
+    "@rollup/plugin-commonjs": "^22.0.0",
+    "eleventy-plugin-ignore": "^0.1.6",
+    "framer-motion": "^6.3.11",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.12",
+    "@types/react-dom": "^18.0.5"
   }
 }

@@ -15,6 +15,7 @@ module.exports = function(eleventyConfig){
     eleventyConfig.addPassthroughCopy("src/style.css");
 
     eleventyConfig.addPassthroughCopy("src/editor/index.js");
+    eleventyConfig.addPassthroughCopy("src/editor/editor-bundle-iife.js");
     eleventyConfig.addPassthroughCopy("src/images");
 
 

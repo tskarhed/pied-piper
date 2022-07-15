@@ -39,6 +39,7 @@ h1 {
 
 .note.space {
   width: 1.5rem;
+  height: 100%;
 }
 
 .covered,
@@ -138,4 +139,38 @@ h1 {
   left: 0;
   width: 100%;
   height: 100%;
+}
+
+/* Editor*/
+#react-root ul,#react-root li {
+  list-style-type: none;
+  padding: 0;
+}
+#react-root ul {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.break {
+  flex-basis: 100%;
+  height: 15px;
+  background-color: transparent;
+  margin: 2rem auto;
+}
+
+#react-root li {
+  position: relative;
+}
+
+.addNote {
+  display: flex;
+  gap: 10px;
+}
+.addNote > * {
+  padding: 0;
+}
+
+button {
+  cursor: pointer;
 }

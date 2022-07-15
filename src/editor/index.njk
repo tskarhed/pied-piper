@@ -1,21 +1,10 @@
 ---
 layout: base.njk
 ---
-
-{% set js %}
-{% include "noteMap.js" %}
-{% endset %}
-<script>
-{{ js | safe}}
-</script>
-
-<script defer src="./index.js"></script>
+<script defer src="./editor-bundle-iife.js"></script>
 
 <h1>Tabs editor</h1>
-Here you can make your own flute tabs. Write notes and separate them with commas. Use a space for some spacing and write "Enter" to get a horizontal line. 
+Here you can make your own flute tabs. Press the notes in the "Add note" section to add to the song. Press a note in the song to remove it. Reordering is not currently possible.
 
-<form>
-  <textarea name="Note input" id="note-input" rows="5" columns="20"></textarea>
-</form>
-<h2>Song output</h2>
-<section id="song"></section>
+If you want to export the song to send to someone, click the copy button and you can paste it anywhere.
+<section id="react-root"></section>
