@@ -1,5 +1,5 @@
-import React, { FC, useEffect, useState } from "react";
-import { AnimatePresence, LayoutGroup, motion, Reorder } from "framer-motion";
+import React, { FC, useState } from "react";
+import { AnimatePresence, Reorder } from "framer-motion";
 import { Note } from "./Note";
 
 interface Props {

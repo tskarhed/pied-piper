@@ -8,6 +8,11 @@ interface Props {
   onClick: (index: number) => void;
 }
 
+const styles = {
+  cursor: "pointer",
+  display: "inline-block",
+};
+
 export const NoteList2: FC<Props> = ({ song, onClick }) => {
   return (
     <motion.div
@@ -19,18 +24,16 @@ export const NoteList2: FC<Props> = ({ song, onClick }) => {
           const isNewline = note.note == "Enter";
 
           return (
-            <motion.span
+            <motion.div
               layout
               variants={noteVariants}
               className={isNewline ? "break" : ""}
+              style={styles}
               key={note.key}
+              onClick={() => onClick(i)}
             >
-              <Note
-                animatePresence
-                note={note.note}
-                onClick={() => onClick(i)}
-              />
-            </motion.span>
+              <Note animatePresence note={note.note} />
+            </motion.div>
           );
         })}
       </AnimatePresence>

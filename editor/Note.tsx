@@ -19,6 +19,9 @@ export const noteVariants = {
   hidden: {
     opacity: 0,
     scale: 0.4,
+    transition: {
+      duration: 0.1,
+    },
   },
   normal: {
     opacity: 1,
@@ -26,18 +29,18 @@ export const noteVariants = {
   },
 };
 
-export const Note: FC<Props> = ({ note, onClick, animatePresence = false }) => {
-  const styles = {
-    cursor: "pointer",
-  };
+const styles = {
+  cursor: "pointer",
+};
 
+export const Note: FC<Props> = ({ note, onClick, animatePresence = false }) => {
   if (note == " ") {
     return (
       <motion.div
+        style={styles}
         onClick={(event) => {
           if (onClick) onClick(event, note);
         }}
-        style={styles}
         className="note space"
       ></motion.div>
     );
@@ -47,13 +50,13 @@ export const Note: FC<Props> = ({ note, onClick, animatePresence = false }) => {
         onClick={(event) => {
           if (onClick) onClick(event, note);
         }}
-        style={styles}
       />
     );
   }
   const [holes, _setHoles] = useState<State>(noteHoles[note]);
   return (
     <motion.div
+      style={styles}
       variants={noteVariants}
       whileTap="hover"
       whileDrag="hover"
@@ -62,7 +65,6 @@ export const Note: FC<Props> = ({ note, onClick, animatePresence = false }) => {
       initial={animatePresence ? "hidden" : ""}
       animate={animatePresence ? "normal" : ""}
       exit={animatePresence ? "hidden" : ""}
-      style={styles}
       className="note"
       onClick={(event) => {
         if (onClick) onClick(event, note);

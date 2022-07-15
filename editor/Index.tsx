@@ -16,6 +16,7 @@ export const Index = () => {
 
   return (
     <>
+      <h2>Add note</h2>
       <AddNote
         onAdd={(value) => {
           console.log("adding " + value);
@@ -27,6 +28,7 @@ export const Index = () => {
           );
         }}
       />
+      <h2>Song output</h2>
       <NoteList2
         song={songObjects}
         onClick={(index) =>
