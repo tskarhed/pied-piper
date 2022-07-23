@@ -5,8 +5,9 @@ body {
   margin: 0;
   background-image: url("./images/bg-noise-texture.png");
   color: #333;
+  box-sizing: border-box;
   padding-top: 20px;
-  height: calc(100% - 20px);
+  min-height: 100vh;
 
   display: flex;
   flex-direction: column;
