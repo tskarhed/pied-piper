@@ -22,7 +22,7 @@
   "homepage": "https://github.com/tskarhed/pied-piper#readme",
   "dependencies": {
     "@11ty/eleventy": "^1.0.0",
-    "vite": "^2.9.12",
+    "vite": "^2.9.13",
     "@rollup/plugin-commonjs": "^22.0.0",
     "eleventy-plugin-ignore": "^0.1.6",
     "framer-motion": "^6.3.11",
