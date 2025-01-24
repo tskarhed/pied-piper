@@ -1,4 +1,4 @@
-const simpleAbcRegex = /[\^_|]?[a-gA-G]|\|/g;
+const simpleAbcRegex = /(?:[\^_]?[a-gA-G]|\|)/g;
 const simpleAbcNoteMap = {
     //0-open, 1 half note, 2 covered. Last in array is octave
     "d":    [2, 2, 2, 2, 2, 2 ],
