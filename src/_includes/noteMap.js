@@ -75,7 +75,6 @@ const noteMap = {
 function abcToHoles(abcNotes){
     const songHoles = [];
     const notes = abcNotes.match(simpleAbcRegex);
-    console.log(notes);
     notes.forEach(function(note){
         if(note==='|'){
             songHoles.push("SPACE");
@@ -87,7 +86,6 @@ function abcToHoles(abcNotes){
         // Ignore input if no cases match
     });
 
-    console.log(songHoles);
 
     return [songHoles,notes];
 }

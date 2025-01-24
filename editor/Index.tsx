@@ -52,9 +52,5 @@ function generateKeyIds(notes: string[]): { note: string; id: string }[] {
 }
 
 function noteObjectToString(noteObjs: NoteObject[]) {
-  let str = "";
-  noteObjs.forEach((noteObj, index) => {
-    str += noteObj.note + (index == noteObjs.length - 1 ? "" : ",");
-  });
-  return str;
+  return noteObjs.map((noteObj) => noteObj.note).join(" ");
 }

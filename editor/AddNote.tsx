@@ -1,18 +1,17 @@
 import React, { FC } from "react";
 import { Note } from "./Note";
-import { noteHoles } from "./noteHoles";
+import { simpleAbcNoteMap } from "./noteHoles";
 
 interface Props {
   onAdd: (value: string) => void;
 }
 
 export const AddNote: FC<Props> = ({ onAdd }) => {
-  const addSpace = <button onClick={() => onAdd(" ")}>Add space</button>;
-  const addEnter = <button onClick={() => onAdd("Enter")}>Add divider</button>;
+  const addSpace = <button onClick={() => onAdd("|")}>Add space</button>;
   return (
     <section className="addNote">
-      {Object.keys(noteHoles)
-        .filter((key) => key[1] !== "b")
+      {Object.keys(simpleAbcNoteMap)
+        .filter((key) => key[0] !== "_")
         .map((key) => {
           return (
             <Note
@@ -23,7 +22,6 @@ export const AddNote: FC<Props> = ({ onAdd }) => {
           );
         })}
       {addSpace}
-      {addEnter}
     </section>
   );
 };

@@ -1,6 +1,6 @@
 import React, { FC, MouseEvent, useState } from "react";
 import { motion } from "framer-motion";
-import { noteHoles } from "./noteHoles";
+import { simpleAbcNoteMap } from "./noteHoles";
 
 interface Props {
   note: string;
@@ -10,7 +10,6 @@ interface Props {
   ) => void;
   animatePresence?: boolean;
 }
-type State = (number | string)[];
 
 export const noteVariants = {
   hover: {
@@ -34,7 +33,7 @@ const styles = {
 };
 
 export const Note: FC<Props> = ({ note, onClick, animatePresence = false }) => {
-  if (note == " ") {
+  if (note == "|") {
     return (
       <motion.div
         style={styles}
@@ -53,7 +52,7 @@ export const Note: FC<Props> = ({ note, onClick, animatePresence = false }) => {
       />
     );
   }
-  const [holes, _setHoles] = useState<State>(noteHoles[note]);
+
   return (
     <motion.div
       style={styles}
@@ -70,7 +69,7 @@ export const Note: FC<Props> = ({ note, onClick, animatePresence = false }) => {
         if (onClick) onClick(event, note);
       }}
     >
-      {holes.map((hole) => {
+      {simpleAbcNoteMap[note].map((hole) => {
         switch (hole) {
           case 0:
             return <div className="open"></div>;
