@@ -1,3 +1,41 @@
+const simpleAbcRegex = /[\^_|]?[a-gA-G]|\|/g;
+const simpleAbcNoteMap = {
+    //0-open, 1 half note, 2 covered. Last in array is octave
+    "d":    [2, 2, 2, 2, 2, 2 ],
+    "^d":    [2, 2, 2, 2, 2, 1 ],
+    "_e":    [2, 2, 2, 2, 2, 1 ],
+    "e":    [2, 2, 2, 2, 2, 0],
+    "f":    [2, 2, 2, 2, 1, 0 ],
+    "^f":   [2, 2, 2, 2, 0, 0],
+    "_g":   [2, 2, 2, 2, 0, 0],
+    "g":    [2, 2, 2, 0, 0, 0],
+    "^g":    [2, 2, 1, 0, 0, 0],
+    "_a":    [2, 2, 1, 0, 0, 0],
+    "a":    [2, 2, 0, 0, 0, 0],
+    "^a":    [2, 1, 0, 0, 0, 0],
+    "_b":    [2, 1, 0, 0, 0, 0],
+    "b":    [2, 0, 0, 0, 0, 0],
+    "c":    [0, 2, 2, 0, 0, 0],
+    "^c":   [0, 0, 0, 0, 0, 0],
+    "D":    [0, 2, 2, 2, 2, 2, '+'],
+    "^D":    [2, 2, 2, 2, 2, 1, '+' ],
+    "_E":    [2, 2, 2, 2, 2, 1, '+' ],
+    "E":    [2, 2, 2, 2, 2, 0, '+'],
+    "F":    [2, 2, 2, 2, 1, 0, '+' ],
+    "^F":   [2, 2, 2, 2, 0, 0, '+'],
+    "_G":   [2, 2, 2, 2, 0, 0, '+'],
+    "G":    [2, 2, 2, 0, 0, 0, '+'],
+    "^G":    [2, 2, 1, 0, 0, 0, '+'],
+    "_A":    [2, 2, 1, 0, 0, 0, '+'],
+    "A":    [2, 2, 0, 0, 0, 0, '+'],
+    "^A":    [2, 1, 0, 0, 0, 0, '+'],
+    "_B":    [2, 1, 0, 0, 0, 0, '+'],
+    "B":    [2, 0, 0, 0, 0, 0, '+'],
+    "C":    [0, 2, 2, 0, 0, 0, '+'],
+    "^C":   [0, 0, 0, 0, 0, 0, '+'],
+};
+
+
 const noteMap = {
     //0-open, 1 half note, 2 covered. Last in array is octave
     "d":    [2, 2, 2, 2, 2, 2 ],
@@ -33,6 +71,26 @@ const noteMap = {
     "C":    [0, 2, 2, 0, 0, 0, '+'],
     "C#":   [0, 0, 0, 0, 0, 0, '+'],
 };
+
+function abcToHoles(abcNotes){
+    const songHoles = [];
+    const notes = abcNotes.match(simpleAbcRegex);
+    console.log(notes);
+    notes.forEach(function(note){
+        if(note==='|'){
+            songHoles.push("SPACE");
+        }
+        const holeMap = simpleAbcNoteMap[note.trim()];
+        if(holeMap){
+            songHoles.push(holeMap);
+        }
+        // Ignore input if no cases match
+    });
+
+    console.log(songHoles);
+
+    return [songHoles,notes];
+}
 
 
 function csvToHoles(csvNotes){
@@ -74,12 +132,10 @@ function renderFluteElement(noteMap){
     })
 }
 
-function renderAllNotes(onClick){
-    
-}
+
 
 function noteStringToHTML(noteString){
-    const [holeMap, notes] = csvToHoles(noteString);
+    const [holeMap, notes] = abcToHoles(noteString);
     const fluteElements = [];
     holeMap.forEach(function(holes, i){
         let space = holes.indexOf("SPACE") != -1;
