@@ -38,8 +38,14 @@ const simpleAbcNoteMap = {
 
 
 function abcToHoles(abcNotes){
+    console.log('Processing notes:', abcNotes);
+    if (!abcNotes) {
+        console.error('No notes provided to abcToHoles');
+        return [[], []];
+    }
     const songHoles = [];
-    const notes = abcNotes.match(simpleAbcRegex);
+    const notes = abcNotes.match(simpleAbcRegex) || [];
+    console.log('Matched notes:', notes);
     notes.forEach(function(note){
         if(note==='|'){
             songHoles.push("SPACE");
@@ -79,6 +85,11 @@ function renderFluteElement(noteMap){
 
 
 function noteStringToHTML(noteString){
+    console.log('Converting to HTML:', noteString);
+    if (!noteString) {
+        console.error('No note string provided to noteStringToHTML');
+        return '';
+    }
     const [holeMap, notes] = abcToHoles(noteString);
     const fluteElements = [];
     holeMap.forEach(function(holes, i){
