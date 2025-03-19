@@ -6,6 +6,7 @@ exports.data = {
 
 exports.render = function render(data){
     const noteHTML = noteStringToHTML(data.notes);
+    const artistInfo = data.artist ? `<p class="artist">By ${data.artist}</p>` : '';
     const youtubeEmbed = data.youtube ? `<div class="youtube-embed">
     <iframe width="560" height="315"
         src="${data.youtube}"
@@ -17,6 +18,7 @@ exports.render = function render(data){
 
     return `
         <h1>${data.title}</h1>
+        ${artistInfo}
         <p>${data.description}</p>
         ${youtubeEmbed}
         ${noteHTML}
